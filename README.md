@@ -5,9 +5,9 @@
 ```text
 01_run.py          固定参数训练、测试与主表汇总
 model.py           动态超图与残差对比学习模型
-trainer.py     训练、评估及指标计算
-layers.py         模型所需基础层
-requirements.txt  运行依赖
+trainer.py         训练、评估及指标计算
+layers.py          模型所需基础层
+requirements.txt   运行依赖
 ```
 
 安装依赖后，从本目录运行。CSV 需要 `name`、`labels` 两列；特征目录包含每条蛋白的 `<name>.npy`，形状为 `[残基数, 特征维数]`。标签可为 `00110` 字符串或 `[0, 0, 1, 1, 0]`。
