@@ -17,6 +17,6 @@ python -m pip install -r requirements.txt
 python 01_run.py --csv_path data/train.csv --test_csv_path data/test1.csv data/test2.csv --feature_dir features --results_dir results --num_knn 6 --CL_margin 0.8 --CL_noise_max 0.20
 ```
 
-命令只训练一组参数，默认五折。示例中的超参数仅演示调用方式，复现时需换成主表实际使用的参数、训练集、测试集和特征。不同测试集有单独特征目录时，按顺序传入 `--test_feature_dir features/test1 features/test2`。
+命令只训练一组参数，默认五折。不同测试集有单独特征目录时，按顺序传入 `--test_feature_dir features/test1 features/test2`。
 
-输出：各折 `best_model.pth`、`fold_metrics.csv`，以及各测试集指标按折取均值的 `main_table.csv`。模型结构、交叉熵加对比损失、优化器和指标计算沿用原实现。AUPRC 为 PR 曲线积分；二值指标沿用原实现，在当前评估集上按最高 F1 选择阈值，因此不是验证集固定阈值的评估口径。没有据此重新验证论文数值。
+输出：各折 `best_model.pth`、`fold_metrics.csv`，以及各测试集指标按折取均值的 `main_table.csv`。
